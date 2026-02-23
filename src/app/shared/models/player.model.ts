@@ -5,7 +5,7 @@ export interface Player {
   posicion: string;
   edad: number;
   altura: string;
-  videoUrl: string;
-  imagenUrl: string;
+  fotoUrl?: string;
+  videoUrl?: string;
   descripcion?: string;
 }

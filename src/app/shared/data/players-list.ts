@@ -1,3 +1,7 @@
+import { Player } from "@shared/models/player.model";
+//import { Player } from "../models/player.model";
+
+
 export const PLAYERS_DATA: Player[] = [
   {
     id: 1,
