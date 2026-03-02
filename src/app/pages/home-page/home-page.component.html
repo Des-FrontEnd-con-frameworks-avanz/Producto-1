@@ -17,9 +17,7 @@
             </div>
 
             <div *ngIf="selectedPlayer" class="card card-body">
-                <!--Contenido para coprobar que funciona-->
-                <h3>Has seleccionado a: {{ selectedPlayer.nombre }}</h3>
-                <p>Funciona</p>
+                <app-detail [player]="selectedPlayer"></app-detail>
             </div>
         </div>
     </div>

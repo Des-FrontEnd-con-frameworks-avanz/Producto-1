@@ -10,7 +10,7 @@ export const PLAYERS_DATA: Player[] = [
     posicion: 'Base',
     edad: 35,
     altura: '1.88m',
-    fotoUrl: 'assets/images/curry.jpg',
+    fotoUrl: 'images/curry.png',
     videoUrl: 'assets/videos/curry-highlights.mp4',
     descripcion: 'Considerado el mejor tirador de la historia. Líder de los Warriors.'
   },
@@ -21,7 +21,7 @@ export const PLAYERS_DATA: Player[] = [
     posicion: 'Alero',
     edad: 39,
     altura: '2.06m',
-    fotoUrl: 'assets/images/lebron.jpg',
+    fotoUrl: 'images/lebron.png',
     videoUrl: 'assets/videos/lebron-highlights.mp4',
     descripcion: 'Máximo anotador histórico de la NBA y 4 veces campeón.'
   },
@@ -32,7 +32,7 @@ export const PLAYERS_DATA: Player[] = [
     posicion: 'Ala-Pívot',
     edad: 29,
     altura: '2.11m',
-    fotoUrl: 'assets/images/giannis.jpg',
+    fotoUrl: 'images/giannis.png',
     videoUrl: 'assets/videos/giannis-highlights.mp4',
     descripcion: 'Dominio físico total y MVP de las finales de 2021.'
   },
@@ -43,7 +43,7 @@ export const PLAYERS_DATA: Player[] = [
     posicion: 'Base',
     edad: 24,
     altura: '2.01m',
-    fotoUrl: 'assets/images/luka.jpg',
+    fotoUrl: 'images/luka.png',
     videoUrl: 'assets/videos/luka-highlights.mp4',
     descripcion: 'Genio esloveno con una visión de juego inigualable.'
   },
@@ -54,7 +54,7 @@ export const PLAYERS_DATA: Player[] = [
     posicion: 'Pívot',
     edad: 28,
     altura: '2.11m',
-    fotoUrl: 'assets/images/jokic.jpg',
+    fotoUrl: 'images/jokic.png',
     videoUrl: 'assets/videos/jokic-highlights.mp4',
     descripcion: 'El "Joker". Un pívot con alma de base y doble MVP.'
   }

@@ -1,1 +1,47 @@
-<p>detail works!</p>
+<div class="detail-container d-flex justify-content-center align-items-start p-4" *ngIf="player; else noSelection">
+  
+  <div class="card shadow-lg border-0" style="width: 26rem; border-radius: 15px; overflow: hidden;">
+    
+    <div class="position-relative">
+      <img [src]="player.fotoUrl" class="card-img p-3" [alt]="player.nombre" 
+           style="height: 350px; object-fit: contain; background: #f8f9fa;">
+      <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow-sm">
+        {{ player.posicion }}
+      </span>
+    </div>
+
+    <div class="card-body text-center bg-white">
+      <h3 class="card-title fw-bold mb-1">{{ player.nombre }} {{ player.apellidos }}</h3>
+      <p class="card-text text-muted px-3 small">{{ player.descripcion }}</p>
+    </div>
+
+    <ul class="list-group list-group-flush border-top border-bottom">
+      <li class="list-group-item d-flex justify-content-between px-4 py-3">
+        <span class="text-muted fw-semibold">Edad</span>
+        <span class="fw-bold text-dark">{{ player.edad }} años</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between px-4 py-3">
+        <span class="text-muted fw-semibold">Altura</span>
+        <span class="fw-bold text-dark">{{ player.altura }}</span>
+      </li>
+    </ul>
+
+    <div class="card-body bg-light p-4">
+      <h6 class="text-center fw-bold text-uppercase mb-3" style="font-size: 0.8rem; letter-spacing: 1px;">
+        Jugadas
+      </h6>
+      <div class="video-placeholder border border-2 border-dashed rounded p-3 text-center bg-white">
+        <i class="bi bi-play-circle text-primary fs-2"></i>
+        <p class="small text-muted mb-0 mt-2">Poner el video aqui: {{ player.videoUrl }}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<ng-template #noSelection>
+  <div class="h-100 d-flex flex-column justify-content-center align-items-center text-muted py-5">
+    <i class="bi bi-person-bounding-box display-1 mb-3 opacity-25"></i>
+    <p class="fs-5">Selecciona un jugador para ver los detalles</p>
+  </div>
+</ng-template>
