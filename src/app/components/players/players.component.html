@@ -1,12 +1,20 @@
-<p>players works!</p>
+<!-- El enunciado solicita directivas ngFor y  ngIf, si se debe substituir por @if/@for usar:
+ @if (!selectedPlayerId)
+ @for (player of players; track player.id)
+ encima de <button> y <div>
+-->
 
-<div class="list-group">
+<div class="list-group shadow-sm">
     <button *ngFor="let player of players" type="button" class="list-group-item list-group-item-action"
         [class.active]="selectedPlayerId === player.id" (click)="onSelectPlayer(player)">
-        <div>
+        <div class="">
             <h5 class="mb-1">{{player.nombre}} {{player.apellidos}}</h5>
-            <small>Edad: {{player.edad}} Altura: {{player.altura}} Posición: {{player.posicion}}</small>
+            <small>Edad: {{player.edad}} | Altura: {{player.altura}} | Posición: {{player.posicion}}</small>
         </div>
 
     </button>
+</div>
+
+<div *ngIf="!selectedPlayerId" class="alert alert-info mt-3">
+    Selecciona un jugador para ver sus detalles.
 </div>
