@@ -1,14 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { Player } from '@shared/models/player.model';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-detail',
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './detail.component.html',
-  styleUrl: './detail.component.sass'
+  styleUrl: './detail.component.scss'
 })
 export class DetailComponent {
-  @Input() player: Player | null = null; 
+  @Input() player: Player | null = null;
 
 }

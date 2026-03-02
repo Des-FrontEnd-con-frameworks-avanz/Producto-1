@@ -1,55 +1,78 @@
-<div class="detail-container d-flex justify-content-center align-items-start p-4" *ngIf="player; else noSelection">
-  
-  <div class="card shadow-lg border-0" style="width: 26rem; border-radius: 15px; overflow: hidden;">
-    
-    <div class="position-relative">
-      <img [src]="player.fotoUrl" class="card-img p-3" [alt]="player.nombre" 
-           style="height: 350px; object-fit: contain; background: #f8f9fa;">
-      <span class="badge bg-primary position-absolute top-0 end-0 m-3 shadow-sm">
-        {{ player.posicion }}
-      </span>
-    </div>
+@if (player) {
+  <div class="row g-4 align-items-start">
 
-    <div class="card-body text-center bg-white">
-      <h3 class="card-title fw-bold mb-1">{{ player.nombre }} {{ player.apellidos }}</h3>
-      <p class="card-text text-muted px-3 small">{{ player.descripcion }}</p>
-    </div>
-
-    <ul class="list-group list-group-flush border-top border-bottom">
-      <li class="list-group-item d-flex justify-content-between px-4 py-3">
-        <span class="text-muted fw-semibold">Edad</span>
-        <span class="fw-bold text-dark">{{ player.edad }} años</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between px-4 py-3">
-        <span class="text-muted fw-semibold">Altura</span>
-        <span class="fw-bold text-dark">{{ player.altura }}</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between px-4 py-3">
-        <span class="text-muted fw-semibold">Peso</span>
-        <span class="fw-bold text-dark">{{ player.peso }}</span>
-      </li>
-      <li class="list-group-item d-flex justify-content-between px-4 py-3">
-        <span class="text-muted fw-semibold">Experiencia</span>
-        <span class="fw-bold text-dark">{{ player.experiencia }}</span>
-      </li>
-    </ul>
-
-    <div class="card-body bg-light p-4">
-      <h6 class="text-center fw-bold text-uppercase mb-3" style="font-size: 0.8rem; letter-spacing: 1px;">
-        Jugadas
-      </h6>
-      <div class="video-placeholder border border-2 border-dashed rounded p-3 text-center bg-white">
-        <i class="bi bi-play-circle text-primary fs-2"></i>
-        <p class="small text-muted mb-0 mt-2">Poner el video aqui: {{ player.videoUrl }}</p>
+    <!-- Foto del jugador -->
+    <div class="col-md-4 text-center">
+      <div class="player-photo-wrap rounded-3 overflow-hidden bg-light border d-inline-block">
+        <img
+          [src]="player.fotoUrl"
+          [alt]="player.nombre + ' ' + player.apellidos"
+          class="img-fluid"
+          style="max-height: 280px; object-fit: contain;"
+          onerror="this.src='https://placehold.co/200x280?text=Sin+Foto'">
+      </div>
+      <div class="mt-3">
+        <span class="badge fs-6 px-3 py-2" style="background-color: #1d428a;">
+          {{ player.posicion }}
+        </span>
       </div>
     </div>
 
-  </div>
-</div>
+    <!-- Info del jugador -->
+    <div class="col-md-8">
+      <h3 class="fw-bold mb-1">{{ player.nombre }} {{ player.apellidos }}</h3>
+      <p class="text-muted mb-3">{{ player.descripcion }}</p>
 
-<ng-template #noSelection>
-  <div class="h-100 d-flex flex-column justify-content-center align-items-center text-muted py-5">
-    <i class="bi bi-person-bounding-box display-1 mb-3 opacity-25"></i>
-    <p class="fs-5">Selecciona un jugador para ver los detalles</p>
+      <!-- Estadísticas en grid -->
+      <div class="row g-2 mb-4">
+        <div class="col-6 col-sm-3 d-flex">
+          <div class="stat-card text-center p-3 rounded-3 bg-light border w-100">
+            <i class="bi bi-calendar-event text-primary d-block fs-5 mb-1"></i>
+            <div class="fw-bold">{{ player.edad }}</div>
+            <small class="text-muted">Años</small>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3 d-flex">
+          <div class="stat-card text-center p-3 rounded-3 bg-light border w-100">
+            <i class="bi bi-arrows-vertical text-primary d-block fs-5 mb-1"></i>
+            <div class="fw-bold">{{ player.altura }}</div>
+            <small class="text-muted">Altura</small>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3 d-flex">
+          <div class="stat-card text-center p-3 rounded-3 bg-light border w-100">
+            <i class="bi bi-activity text-primary d-block fs-5 mb-1"></i>
+            <div class="fw-bold">{{ player.peso }}</div>
+            <small class="text-muted">Peso</small>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3 d-flex">
+          <div class="stat-card text-center p-3 rounded-3 bg-light border w-100">
+            <i class="bi bi-trophy text-primary d-block fs-5 mb-1"></i>
+            <div class="fw-bold">{{ player.experiencia }}</div>
+            <small class="text-muted">Exp.</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vídeo / media -->
+      <div class="border rounded-3 p-3 bg-light">
+        <h6 class="fw-semibold mb-2 text-uppercase" style="font-size: 0.75rem; letter-spacing: 1px; color: #6c757d;">
+          <i class="bi bi-play-circle me-1 text-primary"></i> Jugadas destacadas
+        </h6>
+        <div class="d-flex align-items-center gap-2 text-muted small">
+          <i class="bi bi-film fs-4 text-primary opacity-50"></i>
+          <span class="text-truncate">{{ player.videoUrl }}</span>
+        </div>
+      </div>
+
+    </div>
   </div>
-</ng-template>
+
+} @else {
+  <div class="text-center py-5 text-muted">
+    <i class="bi bi-person-bounding-box display-1 opacity-25 d-block mb-3"></i>
+    <p class="fs-5 mb-1">Ningún jugador seleccionado</p>
+    <small>Haz clic en un jugador de la lista para ver su ficha completa</small>
+  </div>
+}

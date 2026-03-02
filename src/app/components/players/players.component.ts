@@ -1,15 +1,13 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MediaComponent } from '../media/media.component';
 import { Player } from '../../shared/models/player.model'
 import { PLAYERS_DATA } from '../../shared/data/players-list'
 
 @Component({
   selector: 'app-players',
   standalone: true,
-  imports: [CommonModule, MediaComponent],
+  imports: [],
   templateUrl: './players.component.html',
-  styleUrl: './players.component.sass'
+  styleUrl: './players.component.scss'
 })
 export class PlayersComponent implements OnInit{
   public players: Player[] = [];
