@@ -4,15 +4,29 @@
  encima de <button> y <div>
 -->
 
-<div class="list-group shadow-sm">
-    <button *ngFor="let player of players" type="button" class="list-group-item list-group-item-action"
-        [class.active]="selectedPlayerId === player.id" (click)="onSelectPlayer(player)">
-        <div class="">
-            <h5 class="mb-1">{{player.nombre}} {{player.apellidos}}</h5>
-            <small>Edad: {{player.edad}} | Altura: {{player.altura}} | Posición: {{player.posicion}}</small>
-        </div>
 
+
+
+<div class="list-group list-group-flush shadow-sm rounded-3 overflow-hidden">
+
+    <button *ngFor="let player of players" style="cursor: pointer;" type="button"
+        class="list-group-item list-group-item-action p-3 border" [class.active-player]="selectedPlayerId === player.id"
+        (click)="onSelectPlayer(player)">
+
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h5 class="mb-0 text-primary text-uppercase" [class.text-dark]="selectedPlayerId !== player.id">
+                    {{ player.nombre }} {{ player.apellidos }}
+                </h5>
+                <div class="mt-1">
+                    <span class="badge bg-dark-subtle text-dark fw-normal me-2">{{ player.posicion }}</span>
+                    <small class="text-muted">{{ player.edad }} años · {{ player.altura }}</small>
+                </div>
+            </div>
+            <i class="bi bi-chevron-right text-muted"></i>
+        </div>
     </button>
+
 </div>
 
 <div *ngIf="!selectedPlayerId" class="alert alert-info mt-3">
