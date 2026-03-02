@@ -1,1 +1,12 @@
 <p>players works!</p>
+
+<div class="list-group">
+    <button *ngFor="let player of players" type="button" class="list-group-item list-group-item-action"
+        [class.active]="selectedPlayerId === player.id" (click)="onSelectPlayer(player)">
+        <div>
+            <h5 class="mb-1">{{player.nombre}} {{player.apellidos}}</h5>
+            <small>Edad: {{player.edad}} Altura: {{player.altura}} Posición: {{player.posicion}}</small>
+        </div>
+
+    </button>
+</div>
