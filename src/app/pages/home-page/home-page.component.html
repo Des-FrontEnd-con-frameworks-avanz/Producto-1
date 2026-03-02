@@ -1,1 +1,26 @@
 <p>home-page works!</p>
+<div class="container mt-4">
+    <h1>Equipo NoobDevs</h1>
+    <br>
+    <div class="row">
+        <div class="col-md-4">
+            <h2 class="h4 mb-3">Listado de jugadores</h2>
+            <app-players (playerSelected)="handlePlayerSelection($event)"></app-players>
+        </div>
+        <div class="col-md-8">
+            <h2 class="h4 mb-3">Detalles del Jugador</h2>
+
+            <!-- El enunciado solicita directivas ngFor y  ngIf, si se debe substituir por @if usar:
+            @if (!selectedPlayerId) encima del div-->
+            <div *ngIf="!selectedPlayer" class="alert alert-info mt-3">
+                Selecciona un jugador para ver sus detalles.
+            </div>
+
+            <div *ngIf="selectedPlayer" class="card card-body">
+                <!--Contenido para coprobar que funciona-->
+                <h3>Has seleccionado a: {{ selectedPlayer.nombre }}</h3>
+                <p>Funciona</p>
+            </div>
+        </div>
+    </div>
+</div>
