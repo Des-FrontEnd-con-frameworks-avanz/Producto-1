@@ -8,8 +8,10 @@ export const PLAYERS_DATA: Player[] = [
     nombre: 'Stephen',
     apellidos: 'Curry',
     posicion: 'Base',
-    edad: 35,
+    edad: 37,
     altura: '1.88m',
+    peso: '83 kg',
+    experiencia: '16° Temporadas',
     fotoUrl: 'images/curry.png',
     videoUrl: 'assets/videos/curry-highlights.mp4',
     descripcion: 'Considerado el mejor tirador de la historia. Líder de los Warriors.'
@@ -19,8 +21,10 @@ export const PLAYERS_DATA: Player[] = [
     nombre: 'LeBron',
     apellidos: 'James',
     posicion: 'Alero',
-    edad: 39,
+    edad: 41,
     altura: '2.06m',
+    peso: '113 kg',
+    experiencia: '22° Temporadas',
     fotoUrl: 'images/lebron.png',
     videoUrl: 'assets/videos/lebron-highlights.mp4',
     descripcion: 'Máximo anotador histórico de la NBA y 4 veces campeón.'
@@ -32,6 +36,8 @@ export const PLAYERS_DATA: Player[] = [
     posicion: 'Ala-Pívot',
     edad: 29,
     altura: '2.11m',
+    peso: '110 kg',
+    experiencia: '12° Temporadas',
     fotoUrl: 'images/giannis.png',
     videoUrl: 'assets/videos/giannis-highlights.mp4',
     descripcion: 'Dominio físico total y MVP de las finales de 2021.'
@@ -43,6 +49,8 @@ export const PLAYERS_DATA: Player[] = [
     posicion: 'Base',
     edad: 24,
     altura: '2.01m',
+    peso: '104 kg',
+    experiencia: '7° Temporadas',
     fotoUrl: 'images/luka.png',
     videoUrl: 'assets/videos/luka-highlights.mp4',
     descripcion: 'Genio esloveno con una visión de juego inigualable.'
@@ -54,6 +62,8 @@ export const PLAYERS_DATA: Player[] = [
     posicion: 'Pívot',
     edad: 28,
     altura: '2.11m',
+    peso: '128 kg',
+    experiencia: '10° Temporadas',
     fotoUrl: 'images/jokic.png',
     videoUrl: 'assets/videos/jokic-highlights.mp4',
     descripcion: 'El "Joker". Un pívot con alma de base y doble MVP.'

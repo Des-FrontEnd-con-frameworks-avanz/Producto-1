@@ -5,6 +5,8 @@ export interface Player {
   posicion: 'Base' | 'Escolta' | 'Alero' | 'Ala-Pívot' | 'Pívot';
   edad: number;
   altura: string;
+  peso: string;
+  experiencia: string;
   fotoUrl?: string;
   videoUrl?: string;
   descripcion?: string;
