@@ -1,3 +1,8 @@
+video {
+  transform: translateZ(0); // Fuerza el renderizado por GPU
+  backface-visibility: hidden;
+}
+
 .video-modal-overlay {
   position: fixed;
   top: 0; left: 0;
