@@ -9,5 +9,6 @@ export interface Player {
   experiencia: string;
   fotoUrl?: string;
   videoUrl?: string;
+  posterUrl?: string;
   descripcion?: string;
 }

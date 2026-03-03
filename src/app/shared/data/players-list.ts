@@ -14,11 +14,12 @@ export const PLAYERS_DATA: Player[] = [
     experiencia: '16° Temporadas',
     fotoUrl: 'images/curry.png',
     videoUrl: 'assets/videos/curry-highlights.mp4',
+    posterUrl: 'assets/videos/poster/curry.webp',
     descripcion: 'Considerado el mejor tirador de la historia. Líder de los Warriors.'
   },
   {
     id: 2,
-    nombre: 'LeBron',
+    nombre: 'Lebron',
     apellidos: 'James',
     posicion: 'Alero',
     edad: 41,
@@ -27,6 +28,7 @@ export const PLAYERS_DATA: Player[] = [
     experiencia: '22° Temporadas',
     fotoUrl: 'images/lebron.png',
     videoUrl: 'assets/videos/lebron-highlights.mp4',
+    posterUrl: 'assets/videos/poster/lebron.webp',
     descripcion: 'Máximo anotador histórico de la NBA y 4 veces campeón.'
   },
   {
@@ -40,6 +42,7 @@ export const PLAYERS_DATA: Player[] = [
     experiencia: '12° Temporadas',
     fotoUrl: 'images/giannis.png',
     videoUrl: 'assets/videos/giannis-highlights.mp4',
+    posterUrl: 'assets/videos/poster/giannis.webp',
     descripcion: 'Dominio físico total y MVP de las finales de 2021.'
   },
   {
@@ -53,6 +56,7 @@ export const PLAYERS_DATA: Player[] = [
     experiencia: '7° Temporadas',
     fotoUrl: 'images/luka.png',
     videoUrl: 'assets/videos/luka-highlights.mp4',
+    posterUrl: 'assets/videos/poster/luka.webp',
     descripcion: 'Genio esloveno con una visión de juego inigualable.'
   },
   {
@@ -66,6 +70,7 @@ export const PLAYERS_DATA: Player[] = [
     experiencia: '10° Temporadas',
     fotoUrl: 'images/jokic.png',
     videoUrl: 'assets/videos/jokic-highlights.mp4',
+    posterUrl: 'assets/videos/poster/jokic.webp',
     descripcion: 'El "Joker". Un pívot con alma de base y doble MVP.'
   }
 ];
