@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { Player } from '../../shared/models/player.model'
 import { PLAYERS_DATA } from '../../shared/data/players-list'
 import { CurrencyExchangePipe } from '@app/shared/pipes/currency-exchange.pipe';
+import { FiltroEdadPipe } from '../../pipes/filtro-edad.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-players',
   standalone: true,
-  imports: [CommonModule, CurrencyExchangePipe],
+  imports: [CommonModule,FormsModule, CurrencyExchangePipe, FiltroEdadPipe],
   templateUrl: './players.component.html',
   styleUrl: './players.component.scss'
 })
@@ -15,6 +17,7 @@ export class PlayersComponent implements OnInit{
   public players: Player[] = [];
   public selectedPlayerId: number | null = null;
   public selectedCurrency: string = 'EUR';
+  public filtroEdad: string = 'todas';
 
   //Para comunicar al padre el jugador seleccionado
   @Output() playerSelected = new EventEmitter<Player>();

@@ -19,8 +19,18 @@
             <option value="JPY" [selected]="selectedCurrency === 'JPY'">JPY (¥)</option>
         </select>
     </div>
+    <!-- FILTRO POR EDAD -->
+     <div class="px-3 py-2 border-bottom bg-light d-flex align-items-center">
+      <div class="w-100">
+        <select id="currencySelect" class="form-select form-select-sm w-auto" [(ngModel)]="filtroEdad">
+          <option value="todas">Todos</option>
+          <option value="jovenes">Promesas (Menores de 30 años)</option>
+          <option value="veterano">Veteranos (30 años o más)</option>
+        </select>
+      </div>
+    </div>
 
-    @for (player of players; track player.id) {
+    @for (player of players | filtroEdad:filtroEdad; track player.id) {
     <button type="button" class="list-group-item list-group-item-action player-item px-3 py-3 border-bottom"
         [class.player-item--active]="selectedPlayerId === player.id" (click)="onSelectPlayer(player)">
 
