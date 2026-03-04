@@ -7,6 +7,7 @@ export interface Player {
   altura: string;
   peso: string;
   experiencia: string;
+  precio: number;
   fotoUrl?: string;
   videoUrl?: string;
   posterUrl?: string;
