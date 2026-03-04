@@ -29,4 +29,9 @@ export class PlayersComponent implements OnInit{
     //comunicación hacia componentes padres o hermanos
     this.playerSelected.emit(player);
   }
+
+  public onCurrencyChange(event: Event): void{
+    const selectedElement = event.target as HTMLSelectElement;
+    this.selectedCurrency = selectedElement.value;
+  }
 }
