@@ -9,7 +9,7 @@ import { CurrencyExchangePipe } from '@app/shared/pipes/currency-exchange.pipe';
   standalone: true,
   imports: [CommonModule, CurrencyExchangePipe],
   templateUrl: './players.component.html',
-  styleUrl: './players.component.sass'
+  styleUrl: './players.component.scss'
 })
 export class PlayersComponent implements OnInit{
   public players: Player[] = [];
