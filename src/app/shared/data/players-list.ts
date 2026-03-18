@@ -14,7 +14,7 @@ export const PLAYERS_DATA: Player[] = [
     experiencia: '16° Temporadas',
     precio: 59606817,
     fotoUrl: 'images/curry.png',
-    videoUrl: 'assets/videos/curry-highlights.mp4',
+    videoUrl: 'https://www.dropbox.com/scl/fi/uk6gwr6bygz6kt34i2a4e/curry-highlights.mp4?rlkey=d9epg2qf3c9gtj1r1lodg621m&st=zx42srud&raw=1',
     posterUrl: 'assets/videos/poster/curry.webp',
     descripcion: 'Considerado el mejor tirador de la historia. Líder de los Warriors.'
   },
@@ -29,7 +29,7 @@ export const PLAYERS_DATA: Player[] = [
     experiencia: '22° Temporadas',
     precio: 52627153,
     fotoUrl: 'images/lebron.png',
-    videoUrl: 'assets/videos/lebron-highlights.mp4',
+    videoUrl: 'https://www.dropbox.com/scl/fi/axsd4ea7sw1u0x9202ifp/lebron-highlights.mp4?rlkey=1zb3ynz0l94jpw7twxxqhzgo1&st=cgmf8e1i&raw=1',
     posterUrl: 'assets/videos/poster/lebron.webp',
     descripcion: 'Máximo anotador histórico de la NBA y 4 veces campeón.'
   },
@@ -44,7 +44,7 @@ export const PLAYERS_DATA: Player[] = [
     experiencia: '12° Temporadas',
     precio: 54126450,
     fotoUrl: 'images/giannis.png',
-    videoUrl: 'assets/videos/giannis-highlights.mp4',
+    videoUrl: 'https://www.dropbox.com/scl/fi/jd30akpdwvz2rluqyh9t5/antetokounmpo-highlights.mp4?rlkey=g4cwf1kw2x14jk81kfd1o30po&st=vzz5v2d4&raw=1',
     posterUrl: 'assets/videos/poster/giannis.webp',
     descripcion: 'Dominio físico total y MVP de las finales de 2021.'
   },
@@ -59,7 +59,7 @@ export const PLAYERS_DATA: Player[] = [
     experiencia: '7° Temporadas',
     precio: 54123450,
     fotoUrl: 'images/luka.png',
-    videoUrl: 'assets/videos/luka-highlights.mp4',
+    videoUrl: 'https://www.dropbox.com/scl/fi/lo3epwq8rx6ndun8ohbcn/doncic-highlights.mp4?rlkey=bkukl66ztwg3o7xc1l838bpxf&st=k3s7zawv&raw=1',
     posterUrl: 'assets/videos/poster/luka.webp',
     descripcion: 'Genio esloveno con una visión de juego inigualable.'
   },
@@ -74,7 +74,7 @@ export const PLAYERS_DATA: Player[] = [
     experiencia: '10° Temporadas',
     precio: 55224526,
     fotoUrl: 'images/jokic.png',
-    videoUrl: 'assets/videos/jokic-highlights.mp4',
+    videoUrl: 'https://www.dropbox.com/scl/fi/b6zzuynxn8gj4dn2f5rw4/jokic-highlights.mp4?rlkey=0j441o5l65mc1uqxebo32mh4f&st=iggytn64&raw=1',
     posterUrl: 'assets/videos/poster/jokic.webp',
     descripcion: 'El "Joker". Un pívot con alma de base y doble MVP.'
   }

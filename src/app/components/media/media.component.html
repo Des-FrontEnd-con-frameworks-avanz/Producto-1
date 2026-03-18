@@ -8,15 +8,24 @@
 
       <div class="reproductor-master shadow-2xl overflow-hidden">
         <div class="video-wrapper position-relative">
-          <video  #miVideo 
-                  [src]="player.videoUrl" 
-                  class="w-100" 
-                  autoplay
-                  (click)="togglePlay()">
+          
+          @if (isWaiting) {
+            <div class="video-loader-overlay">
+              <div class="spinner-nba"></div>
+            </div>
+          }
+
+          <video 
+            #miVideo 
+            [src]="safeVideoUrl"
+            [poster]="player.posterUrl" 
+            class="w-100" 
+            autoplay
+            playsinline
+            (click)="togglePlay()">
           </video>
 
           <div class="controles-nba-overlay">
-            
             <div class="progress-area px-3">
               <input  type="range" class="nba-slider progress-slider" 
                       min="0" [max]="duration" [value]="currentTime"

@@ -1,6 +1,70 @@
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  background: #000;
+  aspect-ratio: 16 / 9; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
 video {
-  transform: translateZ(0); // Fuerza el renderizado por GPU
-  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+  background: #000;
+  display: block; 
+}
+
+.video-loader-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5; 
+  pointer-events: none; 
+}
+
+.spinner-nba {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-top: 5px solid #c8102e;
+  border-left: 5px solid #1d428a;
+  border-radius: 50%;
+  animation: spin-nba 1s linear infinite;
+}
+
+@keyframes spin-nba {
+  to { transform: rotate(360deg); }
+}
+
+.nba-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  accent-color: #c8102e; 
+
+  &.progress-slider {
+    width: 100%;
+    height: 6px;
+    transition: height 0.2s;
+    &:hover { height: 8px; }
+  }
+
+  &.volume-slider {
+    width: 80px;
+    height: 4px;
+  }
 }
 
 .video-modal-overlay {
@@ -31,10 +95,11 @@ video {
 .controles-nba-overlay {
   position: absolute;
   bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.9));
+  background: linear-gradient(transparent, rgba(0,0,0,0.95));
   opacity: 0;
   transition: opacity 0.3s ease;
-  padding-top: 20px;
+  padding-bottom: 5px;
+  z-index: 10;
 }
 
 .video-wrapper:hover .controles-nba-overlay {
@@ -44,14 +109,11 @@ video {
 .btn-icon {
   background: none; border: none; color: white;
   font-size: 2rem; display: flex; align-items: center;
-  transition: transform 0.2s;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
   &:hover { transform: scale(1.15); color: #1d428a; }
   &.btn-stop:hover { color: #c8102e; }
   &.sm { font-size: 1.2rem; }
-}
-
-.time-display {
-  color: white; font-family: monospace; font-size: 0.9rem;
 }
 
 .btn-cerrar-nba {
@@ -63,17 +125,12 @@ video {
   display: flex; align-items: center; justify-content: center;
   z-index: 100; cursor: pointer;
   box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  transition: background 0.2s;
-  &:hover { background: #1d428a; }
+  transition: all 0.2s;
+  &:hover { background: #1d428a; transform: scale(1.1); }
 }
 
-/* Sliders Estilo NBA */
-.nba-slider {
-  cursor: pointer;
-  accent-color: #c8102e;
-  &.progress-slider {
-    width: 100%; height: 6px;
-  }
+.time-display {
+  color: white; font-family: monospace; font-size: 0.9rem;
 }
 
 @keyframes modalIn {
