@@ -1,6 +1,7 @@
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, AfterViewInit, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Player } from '@app/shared/models/player.model';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-media',
@@ -9,27 +10,44 @@ import { Player } from '@app/shared/models/player.model';
   templateUrl: './media.component.html',
   styleUrls: ['./media.component.scss']
 })
-export class MediaComponent implements AfterViewInit {
+export class MediaComponent implements AfterViewInit, OnInit {
   @Input() player!: Player; 
   @Output() cerrarModal = new EventEmitter<void>();
 
   @ViewChild('miVideo') videoRef!: ElementRef<HTMLVideoElement>;
+
+  private sanitizer = inject(DomSanitizer);
   
   isPlaying = false;
   currentTime = 0;
   duration = 0;
+  isWaiting = true;
+  safeVideoUrl!: SafeResourceUrl;
+
+  ngOnInit() {
+    if (this.player && this.player.videoUrl) {
+      this.safeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.player.videoUrl);
+    }
+  }
 
   ngAfterViewInit() {
+
     const video = this.videoRef.nativeElement;
-    
+
+    video.oncanplay = () => this.isWaiting = false;
+    video.onwaiting = () => this.isWaiting = true;
+    video.onplaying = () => this.isWaiting = false;
     video.onloadedmetadata = () => this.duration = video.duration;
     video.ontimeupdate = () => this.currentTime = video.currentTime;
 
-    video.play().then(() => {
-      this.isPlaying = true;
-    }).catch(error => {
-      console.warn("Autoplay blocked:", error);
-    });
+    video.oncanplay = () => {
+      video.play().then(() => {
+        this.isPlaying = true;
+      }).catch(error => {
+        console.warn("Autoplay blocked:", error);
+      });
+      video.oncanplay = null;
+    };
   }
 
   togglePlay() {
